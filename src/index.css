@@ -1,17 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Heebo", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #111827;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-gray-900 font-bold;
+}
+
+h1 {
+  @apply text-4xl tracking-widest uppercase md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl mb-5;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+button,
+input,
+input::placeholder {
+  font-family: inherit;
+  user-select: none;
+}
+
+/* Buttons */
+.btn {
+  @apply text-white font-semibold py-2 px-6 rounded shadow border  hover:bg-transparent transition-all duration-500;
+}
+
+.btn-primary {
+  @apply bg-blue-800 border-blue-800 hover:text-blue-800;
+}
+
+.btn-red {
+  @apply bg-red-800 border-red-800 hover:text-red-800;
+}
+
+.btn-green {
+  @apply bg-green-800 border-green-800 hover:text-green-800;
+}
+
+.btn-indigo {
+  @apply bg-indigo-800 border-indigo-800 hover:text-indigo-800;
+}
+/* End of buttons */
+
+/* Custom max-width */
+.c-width {
+  @apply xl:max-w-7xl xl:mx-auto;
+}
+/* End of custom max-width */
+
+/* Showcase */
+.showcase {
+  height: calc(60vh - 2rem);
+}
+
+/* Slightly opaque background */
+.bg__image {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -60%);
+}
+
+.bg__image__header {
+  font-size: 1rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* End of slightly opaque background */
+
+@media (min-width: 992px) {
+  .bg__image__header {
+    letter-spacing: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    letter-spacing: 2rem;
+  }
 }
